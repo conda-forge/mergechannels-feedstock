@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mergechannels
-  version: 0.5.6
+  version: "0.6.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,11 +10,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mergechannels-${{ version }}.tar.gz
-  sha256: 627840537e3190335cbc7a8ff2fbf0af586c0acf5ffe4889380792c5188d53a0
+  sha256: a577eb7a60fa9721bd0d79b901187de98c55faaa405a629a99a3db94c14b710c
 
 build:
   number: 0
-  script: 
+  script:
     - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
