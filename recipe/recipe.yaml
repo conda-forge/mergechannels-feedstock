@@ -24,6 +24,7 @@ requirements:
       then:
         - python
         - cross-python_${{ host_platform }}
+        - maturin >=1.8,<2.0
     - ${{ compiler('rust') }}
     - ${{ stdlib("c") }}
     - cargo-bundle-licenses
